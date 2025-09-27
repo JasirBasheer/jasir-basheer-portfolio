@@ -11,7 +11,7 @@ export function Navbar() {
     <nav className="fixed lg:relative bottom-0 lg:h-screen w-full  lg:w-52 lg:dark:bg-slate-900 bg-transparent backdrop-blur-md z-50  ">
       <div className="h-20 lg:h-full flex items-center lg:items-center justify-center border-t lg:border-t-0 lg:border-r border-slate-200 dark:border-slate-800">
         <div className="flex lg:flex-col justify-center items-center gap-8 lg:gap-8  lg:ml-28 lg:px-0">
-          <Link href={`/`}>
+          {/* <Link href={`/`}>
             <div
               className={`${
                 currentPath == "/"
@@ -76,7 +76,7 @@ export function Navbar() {
             >
               <Navigation className="w-full h-full" />
             </div>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

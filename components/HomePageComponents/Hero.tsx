@@ -3,15 +3,15 @@ import Image from "next/image";
 export function Hero() {
   return (
     <div className="w-full ">
-      <div className="sm:pt-14 pt-6 pb-5">
+      {/* <div className="sm:pt-14 pt-6 pb-5">
         <Image
           src="/heroimage.png"
           className="rounded-2xl w-full h-auto max-h-[13rem] object-cover"
           width={500}
           height={500}
           alt="Picture of the author"
-        />{" "}
-      </div>
+      />{" "}
+      </div> */}
 
       <h4 className="text-[1.3rem] font-poppins font-normal">
         Hi, I&apos;m{" "}
