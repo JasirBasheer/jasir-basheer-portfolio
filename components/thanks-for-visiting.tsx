@@ -12,7 +12,7 @@ const ThanksForVisiting = () => {
         Glad to have you here.
       </h1>
       <ul className="mt-4 space-y-2 text-sm">
-        <li className="flex items-center justify-between group cursor-pointer">
+        {/* <li className="flex items-center justify-between group cursor-pointer">
           <Link
             href="/guestbook"
             className="text-blue-400 group-hover:underline max-w-[13rem]"
@@ -22,7 +22,7 @@ const ThanksForVisiting = () => {
           <span className="text-blue-400 transition-transform duration-300 group-hover:translate-x-2">
             →
           </span>
-        </li>
+        </li> */}
         <li className="flex items-center justify-between group cursor-pointer">
           <Link href="mailto:hi@jasirbasheer.dev" className="text-blue-400 group-hover:underline">
             Send an email

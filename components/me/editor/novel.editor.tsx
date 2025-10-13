@@ -1,5 +1,5 @@
-import { Editor } from "novel";
-import { type Editor as TipTapEditor } from "@tiptap/core";
+import { EditorRoot, EditorContent } from "novel";
+import { useCurrentEditor } from "@tiptap/react";
 import parse from 'html-react-parser';
 
 type NovelEditorProps = {
@@ -8,23 +8,33 @@ type NovelEditorProps = {
   content: string | undefined;
 };
 
+function EditorWrapper({ setContent }: { setContent: any }) {
+  const { editor } = useCurrentEditor();
+  
+  if (editor) {
+    editor.on('update', () => {
+      setContent(editor.getHTML());
+    });
+  }
+  
+  return null;
+}
+
 export default function NovelEditor({ setContent, content, title }: NovelEditorProps) {
   return (
     <div className="">
         <h2 className="pt-4 pb-3">{title}</h2>
-        <Editor
-        
-          defaultValue={{
-            type: "doc",
-            content: [],
-            immediatelyRender: false 
-          }}
-          onDebouncedUpdate={(editor?: TipTapEditor) => {
-            setContent(editor?.getHTML());
-          }}
-          disableLocalStorage={true}
-          className="rounded-md border shadow-none"
-        />
+        <EditorRoot>
+          <EditorContent
+            initialContent={{
+              type: "doc",
+              content: [],
+            }}
+            className="rounded-md border shadow-none"
+          >
+            <EditorWrapper setContent={setContent} />
+          </EditorContent>
+        </EditorRoot>
         {content}
         {parse(content || '')}
     </div>

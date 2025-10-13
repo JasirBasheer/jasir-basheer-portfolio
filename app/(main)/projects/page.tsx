@@ -10,7 +10,7 @@ const page = () => {
    <div className="min-h-screen w-full bg-white dark:bg-slate-900">
       <div className="relative grid grid-cols-12 min-h-screen ">
         <div className="sm:col-span-11 col-span-12  dark:bg-slate-900 sm:p-4">
-          <SignGuestBook />
+          {/* <SignGuestBook /> */}
           <div className="grid grid-cols-12 gap-4  mt-5">
             
             <div className="md:col-span-8 col-span-12 sm:px-8 px-5">

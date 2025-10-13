@@ -114,12 +114,15 @@ const InteractiveTile: React.FC<InteractiveTileProps> = ({ gridSize }) => {
     let left = mousePosition.x + offsetX;
     let top = mousePosition.y + offsetY;
 
-    // Prevent color picker from going off-screen
-    if (left + colorPickerWidth > window.innerWidth) {
-      left = mousePosition.x - colorPickerWidth - offsetX;
-    }
-    if (top + colorPickerHeight > window.innerHeight) {
-      top = mousePosition.y - colorPickerHeight - offsetY;
+    // Only check window dimensions on client side
+    if (typeof window !== 'undefined') {
+      // Prevent color picker from going off-screen
+      if (left + colorPickerWidth > window.innerWidth) {
+        left = mousePosition.x - colorPickerWidth - offsetX;
+      }
+      if (top + colorPickerHeight > window.innerHeight) {
+        top = mousePosition.y - colorPickerHeight - offsetY;
+      }
     }
 
     // Ensure non-negative coordinates
